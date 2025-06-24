@@ -24,3 +24,19 @@ Service-Klasse DailyConsumptionCal mit Methoden:
 Die Methode import_consumption_data aus DailyConsumptionCal muss in einen einsatzfähigen Rake-Task eingebunden werden, damit man den Datenimport bequem starten kann.
 
 Controller & View:Der Haus-Controller und die passende View (app/views/haus_show.html.erb) sind noch nicht fertig.
+
+
+
+<h2>Setup</h2>
+1.Clone the repository: 
+
+    git clone <repository-url>
+    cd VREY
+2.Install the dependencies:
+
+    bundle install
+    
+3.Rails Migration
+
+    bin/rails db:create db:migrate
+    
