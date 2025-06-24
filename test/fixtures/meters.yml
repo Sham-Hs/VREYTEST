@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  unit: one
+  location_id: 1
+
+two:
+  type: 
+  unit: two
+  location_id: 1

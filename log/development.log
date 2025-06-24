@@ -1,0 +1,446 @@
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 00:34:57 +0200
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='App'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 4 pending migrations:
+
+db/migrate/20250623142516_create_hauses.rb
+db/migrate/20250623142936_create_units.rb
+db/migrate/20250623143217_create_meters.rb
+db/migrate/20250623221926_create_measurements.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/lint.rb:66:in `response'
+rack (3.1.16) lib/rack/lint.rb:41:in `call'
+rack (3.1.16) lib/rack/show_exceptions.rb:31:in `call'
+rack (3.1.16) lib/rack/common_logger.rb:43:in `call'
+rack (3.1.16) lib/rack/content_length.rb:20:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-23 22:36:42.920153', '2025-06-23 22:36:42.920157') RETURNING "key" /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+Migrating to CreateHauses (20250623142516)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "hauses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250623142516') RETURNING "version" /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+Migrating to CreateUnits (20250623142936)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "units" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_1fdc6bcbb2"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_units_on_house_id" ON "units" ("house_id") /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250623142936') RETURNING "version" /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+Migrating to CreateMeters (20250623143217)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "meters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b24937b93d"
+FOREIGN KEY ("unit_id")
+  REFERENCES "units" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_meters_on_unit_id" ON "meters" ("unit_id") /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250623143217') RETURNING "version" /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+Migrating to CreateMeasurements (20250623221926)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_642bbc0d25"
+FOREIGN KEY ("meter_id")
+  REFERENCES "meters" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_measurements_on_meter_id" ON "measurements" ("meter_id") /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250623221926') RETURNING "version" /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mMeter Pluck (0.9ms)[0m  [1m[34mSELECT "meters"."id" FROM "meters" /*application='App'*/[0m
+  [1m[36mHause Load (0.9ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[36mHause Create (6.3ms)[0m  [1m[32mINSERT INTO "hauses" ("name", "created_at", "updated_at") VALUES ('mein Haus', '2025-06-23 22:57:33.951879', '2025-06-23 22:57:33.951879') RETURNING "id" /*application='App'*/[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mHause Load (0.2ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mHause Load (1.0ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mHause Load (6.2ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mHause Load (0.2ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mHause Load (0.4ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:40:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:40:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:40:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:40:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-24 01:41:28 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 115ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:41:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 01:49:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id" for ::1 at 2025-06-24 01:49:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id"):
+  
+Started GET "/values/:location_id" for ::1 at 2025-06-24 02:00:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-24 02:03:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 100ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-06-24 02:03:53 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/values" for ::1 at 2025-06-24 02:04:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values"):
+  
+Started GET "/" for ::1 at 2025-06-24 02:04:23 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 62ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 02:04:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+Started GET "/values/:location_id/load-profile?beginDate=2025-06-04" for ::1 at 2025-06-24 02:10:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/values/:location_id/load-profile"):
+  
+  [1m[36mHause Load (1.0ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mHause Load (0.3ms)[0m  [1m[34mSELECT "hauses".* FROM "hauses" ORDER BY "hauses"."id" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mUnit Load (0.8ms)[0m  [1m[34mSELECT "units".* FROM "units" WHERE "units"."hause_id" = 1 /*application='App'*/[0m
+Started GET "/" for ::1 at 2025-06-24 02:49:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 104ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/" for ::1 at 2025-06-24 02:49:43 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shamhsnawi/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/houses" for ::1 at 2025-06-24 02:50:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-06-24 02:50:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses/1" for ::1 at 2025-06-24 02:50:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/houses/1"):
+  
+Started GET "/houses" for ::1 at 2025-06-24 08:33:49 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/houses"):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+Migrating to CreateHauses (20250623142516)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35m (4.8ms)[0m  [1m[35mDROP TABLE "hauses" /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250623142516' /*application='App'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='App'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='App'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "measurements" /*application='App'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_measurements_on_meter_id" ON "measurements" ("meter_id") /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "meters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "meters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_meters_on_unit_id" ON "meters" ("unit_id") /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "units" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "units" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_units_on_house_id" ON "units" ("house_id") /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameasurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ameasurements_on_meter_id" ON "ameasurements" ("meter_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ameasurements" ("id","meter_id","value_kwh","created_at","updated_at")
+                     SELECT "id","meter_id","value_kwh","created_at","updated_at" FROM "measurements" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "measurements" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_642bbc0d25"
+FOREIGN KEY ("meter_id")
+  REFERENCES "meters" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_measurements_on_meter_id" ON "measurements" ("meter_id") /*application='App'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "measurements" ("id","meter_id","value_kwh","created_at","updated_at")
+                     SELECT "id","meter_id","value_kwh","created_at","updated_at" FROM "ameasurements" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameasurements" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ameters_on_unit_id" ON "ameters" ("unit_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ameters" ("id","type","unit_id","location_id","created_at","updated_at")
+                     SELECT "id","type","unit_id","location_id","created_at","updated_at" FROM "meters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "meters" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "meters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b24937b93d"
+FOREIGN KEY ("unit_id")
+  REFERENCES "units" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_meters_on_unit_id" ON "meters" ("unit_id") /*application='App'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "meters" ("id","type","unit_id","location_id","created_at","updated_at")
+                     SELECT "id","type","unit_id","location_id","created_at","updated_at" FROM "ameters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameters" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aunits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aunits_on_house_id" ON "aunits" ("house_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aunits" ("id","name","house_id","created_at","updated_at")
+                     SELECT "id","name","house_id","created_at","updated_at" FROM "units" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "units" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "units" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_1fdc6bcbb2"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_units_on_house_id" ON "units" ("house_id") /*application='App'*/[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "units" ("id","name","house_id","created_at","updated_at")
+                     SELECT "id","name","house_id","created_at","updated_at" FROM "aunits" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='App'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "measurements" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_measurements_on_meter_id" ON "measurements" ("meter_id") /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "meters" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "meters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_meters_on_unit_id" ON "meters" ("unit_id") /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "units" /*application='App'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "units" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_units_on_house_id" ON "units" ("house_id") /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameasurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ameasurements_on_meter_id" ON "ameasurements" ("meter_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ameasurements" ("id","meter_id","value_kwh","created_at","updated_at")
+                     SELECT "id","meter_id","value_kwh","created_at","updated_at" FROM "measurements" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "measurements" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "measurements" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "meter_id" integer NOT NULL, "value_kwh" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_642bbc0d25"
+FOREIGN KEY ("meter_id")
+  REFERENCES "meters" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_measurements_on_meter_id" ON "measurements" ("meter_id") /*application='App'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "measurements" ("id","meter_id","value_kwh","created_at","updated_at")
+                     SELECT "id","meter_id","value_kwh","created_at","updated_at" FROM "ameasurements" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameasurements" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ameters_on_unit_id" ON "ameters" ("unit_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ameters" ("id","type","unit_id","location_id","created_at","updated_at")
+                     SELECT "id","type","unit_id","location_id","created_at","updated_at" FROM "meters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "meters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "meters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "unit_id" integer NOT NULL, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_b24937b93d"
+FOREIGN KEY ("unit_id")
+  REFERENCES "units" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_meters_on_unit_id" ON "meters" ("unit_id") /*application='App'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "meters" ("id","type","unit_id","location_id","created_at","updated_at")
+                     SELECT "id","type","unit_id","location_id","created_at","updated_at" FROM "ameters" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameters" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='App'*/[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mPRAGMA foreign_keys /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aunits" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aunits_on_house_id" ON "aunits" ("house_id") /*application='App'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aunits" ("id","name","house_id","created_at","updated_at")
+                     SELECT "id","name","house_id","created_at","updated_at" FROM "units" /*application='App'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "units" /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "units" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "house_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_1fdc6bcbb2"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+) /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_units_on_house_id" ON "units" ("house_id") /*application='App'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "units" ("id","name","house_id","created_at","updated_at")
+                     SELECT "id","name","house_id","created_at","updated_at" FROM "aunits" /*application='App'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='App'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='App'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='App'*/[0m
