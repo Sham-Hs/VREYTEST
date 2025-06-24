@@ -40,3 +40,6 @@ Controller & View:Der Haus-Controller und die passende View (app/views/haus_show
 
     bin/rails db:create db:migrate
     
+4.Start application
+
+    bin/rails server
